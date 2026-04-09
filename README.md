@@ -25,7 +25,58 @@ Isso expõe dados sensíveis a riscos como:
 
 ---
 
+## 💡 Solução Proposta
+
+O ExdVault resolve esse problema oferecendo:
+
+- Armazenamento local criptografado
+- Proteção por senha mestre
+- Organização por categorias
+- Interface gráfica simples e intuitiva
+
+Todos os dados são criptografados utilizando algoritmos modernos antes de serem salvos no disco.
+
+---
+
+## 👥 Público-Alvo
+
+- Usuários que desejam armazenar senhas com segurança
+- Pessoas que buscam uma alternativa simples a gerenciadores de senha complexos
+
+---
+
+## 🔒 Segurança
+
+O projeto utiliza práticas modernas de segurança:
+
+- **Argon2** para derivação de chave (proteção contra brute force)
+- **AES-GCM (256 bits)** para criptografia autenticada
+- Uso de **salt aleatório**
+- Armazenamento seguro em arquivo binário
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- Python 3.x
+- customtkinter
+- cryptography
+- argon2-cffi
+- json
+
+---
+
+## 📦 Estrutura do Projeto
+
+---
+
+## 📁 Armazenamento de Dados
+
+---
+
 ## 👨‍💻 Autor
+
+<h1>João Gabriel Souto</h1>
 
 <div>
   <a href="https://www.linkedin.com/in/gabrielsouto01/" target="_blank">
