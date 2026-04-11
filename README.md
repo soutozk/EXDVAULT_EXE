@@ -41,7 +41,27 @@ Todos os dados são criptografados utilizando algoritmos modernos antes de serem
 ## 👥 Público-Alvo
 
 - Usuários que desejam armazenar senhas com segurança
+- Estudantes e profissionais de tecnologia
 - Pessoas que buscam uma alternativa simples a gerenciadores de senha complexos
+
+---
+
+## ✨ Funcionalidades
+
+- 🔐 Criação de cofre seguro (vault)
+- 🔑 Autenticação via senha mestre
+- 📂 Organização por categorias:
+
+  - Redes sociais
+  - Apps
+  - Sites
+  - Bancos de dados
+  - Faculdade
+  - Outros
+
+- ➕ Adição de credenciais (serviço, usuário e senha)
+- 👁️ Visualização das credenciais
+- 💾 Salvamento criptografado em arquivo local
 
 ---
 
@@ -68,9 +88,134 @@ O projeto utiliza práticas modernas de segurança:
 
 ## 📦 Estrutura do Projeto
 
+```
+ExdVault/
+├── main.py
+├── requirements.txt
+├── VERSION
+├── README.md
+├── tests/
+│   └── test_crypto.py
+└── .github/
+    └── workflows/
+        └── ci.yml
+```
+
+---
+
+## ⚙️ Instalação
+
+### 1. Clone o repositório
+
+```
+git clone https://github.com/seu-usuario/exdvault.git
+cd exdvault
+```
+
+### 2. Instale as dependências
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Execução
+
+```
+python main.py
+```
+
+---
+
+## 🧪 Testes Automatizados
+
+Execute os testes com:
+
+```
+pytest
+```
+
+---
+
+## 🧹 Análise de Código (Lint)
+
+Execute o lint com:
+
+```
+ruff .
+```
+
+---
+
+## 🔄 Integração Contínua (CI)
+
+O projeto utiliza **GitHub Actions** para:
+
+- Instalar dependências automaticamente
+- Executar lint
+- Rodar testes automatizados
+
+A pipeline é executada a cada:
+
+- push
+- pull request
+
+---
+
+## 📊 Versionamento
+
+Este projeto segue **Versionamento Semântico (SemVer)**:
+
+```
+MAJOR.MINOR.PATCH
+```
+
+Versão atual:
+
+```
+1.0.0
+```
+
 ---
 
 ## 📁 Armazenamento de Dados
+
+Os dados são armazenados localmente em:
+
+- `vault.enc` → dados criptografados
+- `salt.bin` → salt utilizado na derivação da chave
+
+⚠️ Importante:
+Sem a senha mestre correta, os dados não podem ser recuperados.
+
+---
+
+## 📸 Exemplo de Uso
+
+1. Criar senha mestre
+2. Selecionar categoria
+3. Adicionar credenciais
+4. Visualizar dados salvos
+5. Salvar cofre
+
+---
+
+## ⚠️ Limitações
+
+- Armazenamento apenas local
+- Não possui backup automático
+- Não há recuperação de senha mestre
+
+---
+
+## 🚀 Melhorias Futuras
+
+- Exportação criptografada
+- Backup em nuvem
+- Gerador de senhas seguras
+- Autopreenchimento
+- Interface mais avançada
 
 ---
 
