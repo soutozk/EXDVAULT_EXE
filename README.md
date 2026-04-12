@@ -237,3 +237,10 @@ Sem a senha mestre correta, os dados não podem ser recuperados.
 ## 📄 Licença
 
 MIT License
+
+---
+
+## Repositorio
+
+https://github.com/soutozk/EXDVAULT_EXE
+
