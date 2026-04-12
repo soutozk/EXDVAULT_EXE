@@ -236,4 +236,4 @@ Sem a senha mestre correta, os dados não podem ser recuperados.
 
 ## 📄 Licença
 
-Este projeto é livre para fins educacionais.
+MIT License
