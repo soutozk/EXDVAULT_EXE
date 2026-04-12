@@ -108,8 +108,8 @@ ExdVault/
 ### 1. Clone o repositório
 
 ```
-git clone https://github.com/seu-usuario/exdvault.git
-cd exdvault
+git clone https://github.com/soutozk/EXDVAULT_EXE.git
+cd EXDVAULT_EXE
 ```
 
 ### 2. Instale as dependências
