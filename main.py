@@ -2,6 +2,8 @@ import os
 import json
 import customtkinter as ctk
 import re
+import hashlib
+import requests
 from tkinter import messagebox
 
 from argon2.low_level import hash_secret_raw, Type
@@ -12,7 +14,27 @@ ctk.set_appearance_mode("dark")
 VAULT_FILE = "vault.enc"
 SALT_FILE = "salt.bin"  
 
+# ----------------------------
+# API: SENHAS VAZADAS (HIBP)
+# ----------------------------
 
+def check_password_pwned(password: str) -> bool:
+    sha1 = hashlib.sha1(password.encode()).hexdigest().upper()
+    prefix = sha1[:5]
+    suffix = sha1[5:]
+
+    url = f"https://api.pwnedpasswords.com/range/{prefix}"
+
+    try:
+        res = requests.get(url, timeout=5)
+        if res.status_code != 200:
+            return False
+
+        hashes = (line.split(":") for line in res.text.splitlines())
+        return any(h == suffix for h, _ in hashes)
+
+    except:
+        return False
 # ----------------------------
 # CRIPTOGRAFIA
 # ----------------------------
@@ -77,7 +99,14 @@ def first_setup():
         if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
             status.configure(text="Senha deve ter pelo menos um caractere especial")
             return
+       #API CHECK AQUI
+        status.configure(text="Verificando vazamentos...")
+        root.update()
 
+        if check_password_pwned(password):
+            status.configure(text="Senha vazada em leaks! escolha outra")
+            return
+            
         salt = os.urandom(16)
 
         with open(SALT_FILE, "wb") as f:
